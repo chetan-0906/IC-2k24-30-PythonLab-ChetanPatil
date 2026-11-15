@@ -1,13 +1,41 @@
-# Python Lab: Naive vs. Optimized Algorithms
- 
-In this Lab i explored  how algorithmic choices — not just code-level  — determine
-performance. each quetion   starts with a brute-force solution and works up to a
-faster approach, timing both along the way.
-## Overall Takeaway
- 
-Across all three problems, the same pattern repeats: brute-force solutions that
-redo work per element are O(N²) or worse. Real speedups came from either
-restructuring the problem (search over answers, sieve instead of retest) or
-pairing the right data structure with a single pass (hash map lookups). Small
-code-level tweaks (e.g. skipping even numbers) helped by a constant factor, but
-never changed the growth curve — only an algorithmic change did that.
+
+
+# Python Lab Assignment – Algorithm Optimization
+
+## Overview
+This assignment explores algorithm optimization by solving three problems using naive and optimized approaches and comparing their execution times.
+
+## Problems Covered
+
+### 1. Sum of All Primes Below N
+- Naive approach: Checks all possible divisors.
+- Optimized approach: Square root method and Sieve of Eratosthenes.
+- Best result: Sieve – 0.2509 sec (N = 2,000,000).
+
+### 2. Count Pairs With a Given Sum
+- Naive approach: Uses nested loops.
+- Optimized approach: Uses a dictionary (hash-based lookup).
+- Best result: 0.0213 sec (N = 50,000).
+
+### 3. K-th Smallest Pairwise Sum
+- Naive approach: Generates and sorts all pairwise sums.
+- Optimized approach: Uses sorting, two pointers, and binary search.
+- Best result: 0.0127 sec (N = 5,000).
+
+## Performance Comparison
+
+| Problem | Naive Time | Optimized Time |
+|---|---:|---:|
+| Sum of Primes (2M) | Not measured | 0.2509 sec |
+| Count Pairs (50K) | 76.2584 sec | 0.0213 sec |
+| K-th Smallest Sum (5K) | 8.9936 sec | 0.0127 sec |
+
+## Key Learnings
+- Importance of time and space complexity.
+- Choosing efficient algorithms and data structures.
+- Using dictionaries for faster lookups.
+- Applying binary search and two-pointer techniques.
+- Reducing unnecessary calculations and memory usage.
+
+## Conclusion
+This assignment helped me understand how choosing better algorithms and data structures can significantly improve program performance while maintaining correct outputs.
