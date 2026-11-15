@@ -1,258 +1,140 @@
-Python Lab — Lab 5: Dictionary
-Subject: Python Programming Lab
-Lab: 5
-Topic: Python Dictionaries
-Author: Chetan Patil
+# Python Dictionary — Part A: Programs
 
-📌 Overview
-This lab explores Python dictionaries and their applications in solving real-world problems. It covers nested dictionaries, dictionary methods, comprehensions, aggregation, sorting, searching, data validation, output prediction, and conceptual reasoning.
+## 📌 Overview
 
-The assignment is divided into three parts:
+This project contains five Python programs demonstrating the practical use of dictionaries, nested dictionaries, comprehensions, aggregation, searching, sorting, and data validation.
 
-Part A: Five practical Python programs.
-Part B: Predicting the output of dictionary-based Python code.
-Part C: Short reasoning questions about dictionary behavior and implementation choices.
-🎯 Objectives
-Understand dictionary creation, access, modification, and deletion.
-Implement nested dictionaries and dictionaries containing lists.
-Build menu-driven applications using dictionaries.
-Apply dictionary comprehensions and list comprehensions.
-Perform grouping, filtering, sorting, and aggregation.
-Validate user input and handle missing records.
-Understand aliasing, shallow copying, deep copying, and hashable keys.
-Analyze dictionary operations and their time complexity.
-Part A: Programs
-Q1. Student Database
-Concepts: Nested dictionaries, validation, averages, grades, and reports.
+Each program solves a real-world problem using Python dictionary operations and follows the requirements provided in the assignment.
 
-Store student records using the structure:
+## 🎯 Objectives
 
-roll_no -> {"name": ..., "marks": {subject: score}}
+- Understand dictionaries and nested dictionaries.
+- Perform CRUD operations: Create, Read, Update, and Delete.
+- Use dictionary methods such as `.get()`, `.setdefault()`, and `.update()`.
+- Apply dictionary and list comprehensions.
+- Perform grouping, filtering, sorting, and aggregation.
+- Validate user input and handle invalid operations safely.
+- Generate reports from stored data.
 
-Features
-Add a student and reject duplicate roll numbers.
-Validate marks between 0 and 100.
-Update marks for an existing or new subject.
-Delete a student.
-Display a student's complete record.
-Calculate average marks for every student.
-Identify the topper and highest scorer in each subject.
-Find students scoring below 40 in any subject.
-Group students by grades A, B, C, D, and F.
-Sample Data
-Roll No.	Name	Math	Physics	Chemistry
-101	Asha	88	76	92
-102	Ravi	35	58	64
-103	Meena	72	81	69
-Expected Results
-Asha's average: 85.33
-Ravi's average: 52.33
-Meena's average: 74.00
-Topper: Asha
-Highest Math scorer: Asha (88)
-Highest Physics scorer: Meena (81)
-Highest Chemistry scorer: Asha (92)
-Student scoring below 40: Ravi
-Q2. Employee Database
-Concepts: Dictionary operations, aggregation, grouping, sorting, and comprehensions.
+## 📂 Programs Included
 
-Store employees using:
+### Q1. Student Database
 
-emp_id -> {"name": ..., "dept": ..., "salary": ...}
+**Concepts:** Nested dictionaries, validation, comprehensions, and reports.
 
-Features
-Add, update, delete, and search employee records.
-Calculate department-wise total payroll and headcount in one pass.
-Identify the highest-paid employee in each department.
-Sort employees by salary in descending order.
-Create a new dictionary applying a 10% raise to employees earning below ₹50,000.
-Find the department with the highest average salary.
-Display a friendly message when an employee does not exist.
-Sample Data
-Employee ID	Name	Department	Salary
-E1	Kiran	IT	60000
-E2	Sara	HR	45000
-E3	Dev	IT	75000
-E4	Nina	Finance	52000
-E5	Omar	HR	48000
-Expected Results
-IT payroll: ₹135,000
-HR payroll: ₹93,000
-Finance payroll: ₹52,000
-Highest-paid IT employee: Dev
-Highest-paid HR employee: Omar
-Highest-paid Finance employee: Nina
-Highest average salary: IT (₹67,500)
-Sara's revised salary: ₹49,500
-Omar's revised salary: ₹52,800
-The original employee dictionary must remain unchanged after generating the revised salary dictionary.
+Features:
+- Add, update, delete, and search student records.
+- Store student names and subject-wise marks.
+- Reject duplicate roll numbers.
+- Validate marks within the range of 0–100.
+- Calculate each student's average marks.
+- Identify the topper and highest scorer in each subject.
+- Find students scoring below 40 in any subject.
+- Group students according to grades A, B, C, D, and F.
 
-Q3. Library Record System
-Concepts: Nested dictionaries, lists, state management, and validation.
+### Q2. Employee Database
 
-Store books using:
+**Concepts:** Dictionary operations, grouping, aggregation, sorting, and comprehensions.
 
-isbn -> {"title": ..., "author": ..., "copies": ..., "issued_to": [...]}
+Features:
+- Add, update salary, delete, and search employees.
+- Calculate department-wise payroll and headcount.
+- Identify the highest-paid employee in each department.
+- Sort employees by salary in descending order.
+- Create a new dictionary applying a 10% raise to employees earning below ₹50,000.
+- Identify the department with the highest average salary.
+- Display an appropriate message when an employee does not exist.
 
-Features
-Add a book or increase copies for an existing ISBN.
-Issue and return books.
-Search for books.
-Allow a member to hold a maximum of two books.
-Prevent issuing unavailable books.
-Prevent the same member from borrowing the same book twice.
-Reject returns when the member does not hold the book.
-Generate reports for books by author, unavailable books, never-issued books, and members holding multiple books.
-Sample Data
-Book ID	Title	Author	Copies
-B1	Python Basics	Rao	2
-B2	Data Structures	Iyer	1
-B3	Algorithms	Rao	1
-Important Test Cases
-Issue B1 to M1: success.
-Issue B1 to M2: success; available copies become zero.
-Issue B1 to M3: rejected because no copies remain.
-Issue B1 to M1 again: rejected because M1 already holds it.
-Return B1 by M9: rejected because M9 does not hold it.
-Return B1 by M1: success.
-Enforce the two-book limit per member.
-Q4. Word Frequency Counter
-Concepts: String processing, dictionaries as counters, sorting, and comprehensions.
+### Q3. Library Record System
 
-Features
-Accept a paragraph from the user.
-Convert text to lowercase and remove punctuation without using a library for punctuation removal.
-Count each word using .get().
-Display the top N words, breaking ties alphabetically.
-Find words appearing exactly once.
-Invert the frequency dictionary into {frequency: [words]}.
-Group unique words by length.
-Search for a word and display its count.
-Handle empty input gracefully.
-Example
-Input: the cat and the hat and the bat
+**Concepts:** Nested dictionaries, lists, state management, and validation.
 
-Expected frequency counts:
+Features:
+- Add books and increase copies for existing ISBNs.
+- Issue and return books.
+- Track members holding each book.
+- Enforce book availability and a maximum limit of two books per member.
+- Prevent duplicate issues and invalid returns.
+- Search for books and generate library reports.
+- Find books by author, unavailable books, never-issued books, and members holding multiple books.
 
-the: 3
-and: 2
-bat: 1
-cat: 1
-hat: 1
-Top 3 words: the (3), and (2), bat (1)
+### Q4. Word Frequency Counter
 
-Inverted dictionary: {3: ['the'], 2: ['and'], 1: ['bat', 'cat', 'hat']}
+**Concepts:** String processing, dictionaries as counters, sorting, and comprehensions.
 
-Q5. Phone Directory
-Concepts: Dictionaries with list values, reverse lookup, searching, and validation.
+Features:
+- Accept a paragraph from the user.
+- Convert text to lowercase and remove punctuation.
+- Count word frequencies using `.get()`.
+- Display the top N words, breaking ties alphabetically.
+- Find words appearing exactly once.
+- Invert the frequency dictionary.
+- Group unique words by their length.
+- Search for a word without crashing when it is absent.
+- Handle empty input gracefully.
 
-Store contacts using:
+### Q5. Phone Directory
 
-name -> {"phones": [...], "email": ..., "city": ...}
+**Concepts:** Dictionaries with list values, reverse lookup, validation, and grouping.
 
-Features
-Add and delete contacts.
-Add another number to an existing contact.
-Update email or city.
-Search names using a case-insensitive partial match.
-Validate that phone numbers contain exactly 10 digits.
-Prevent a phone number from belonging to multiple contacts.
-Build a reverse lookup dictionary mapping numbers to names.
-Group contacts by city.
-Find contacts with multiple phone numbers.
-Display the directory alphabetically.
-Sample Data
-Name	Phone Numbers	Email	City
-Anita	9876543210	anita@mail.com	Pune
-Manoj	9123456780, 9988776655	manoj@mail.com	Delhi
-Zara	9000011111	zara@mail.com	Pune
-Expected Results
-Partial search "an": Anita, Manoj
-Reverse lookup 9988776655: Manoj
-Pune contacts: Anita, Zara
-Delhi contacts: Manoj
-Contact with multiple numbers: Manoj
-Duplicate phone number: rejected
-Invalid number such as 12345: rejected
-Part B: Predict the Output
-This section tests understanding of dictionary behavior and Python execution.
+Features:
+- Add and delete contacts.
+- Add multiple phone numbers to an existing contact.
+- Update email addresses and cities.
+- Validate phone numbers as exactly 10 digits.
+- Prevent duplicate phone numbers across contacts.
+- Perform case-insensitive partial-name searches.
+- Build a reverse phone lookup dictionary.
+- Group contacts by city.
+- Find contacts with multiple phone numbers.
+- Display the directory alphabetically.
 
-Topics Covered
-Dictionary aliasing.
-Shallow copying of nested dictionaries.
-Dictionary comprehensions with conditions.
-The .setdefault() method.
-Equal dictionary keys such as 1, 1.0, and True.
-Deleting dictionary entries during iteration.
-The .pop() and .popitem() methods.
-Dictionary comprehensions with duplicate values.
-Instructions
-Predict the output before running each program.
-Execute the code to verify the answer.
-For every incorrect prediction, write one line explaining the mistake.
-Part C: Short Reasoning Questions
-This section focuses on the reasoning behind Python dictionary operations.
+## 🛠️ Technologies Used
 
-Topics Covered
-Aliasing versus copying.
-Shallow copy versus deep copy.
-Hashable and unhashable dictionary keys.
-Dictionary access using d[key] and .get().
-The .update() method versus direct assignment.
-Creating new dictionaries using comprehensions.
-Safe deletion of dictionary keys.
-Inverting dictionaries containing multiple values.
-Dictionary lookup complexity versus list searching.
-Learning Goal
-Explain not only how dictionary operations work, but also why a particular approach is suitable for a given problem.
+- **Language:** Python 3.x
+- **Data Structures:** Dictionaries, nested dictionaries, and lists
+- **Concepts:** Dictionary methods, comprehensions, loops, conditions, functions, sorting, and input validation
 
-🛠️ Technologies Used
-Programming Language: Python 3.x
-Data Structures: Dictionaries, nested dictionaries, and lists
-Core Concepts: Functions, loops, conditional statements, comprehensions, sorting, searching, and input validation
-Editor: Visual Studio Code or any Python-compatible editor
-Version Control: Git and GitHub
-▶️ How to Run
-Install Python 3.x.
+## ▶️ How to Run
 
-Clone or download this repository.
+1. Install Python 3.x on your computer.
+2. Open the project folder in VS Code or another code editor.
+3. Save each program in its own Python file.
+4. Open the terminal in the project folder.
+5. Run the required program using:
 
-Open the project in Visual Studio Code.
+   ```bash
+   python filename.py
+   ```
 
-Navigate to the folder containing the required Python program.
+   Replace `filename.py` with the name of the Python file you want to execute.
 
-Open the terminal and run:
+## 🧪 Testing and Validation
 
-python filename.py
-Replace filename.py with the actual name of the program.
+The programs should be tested with:
+- Valid and invalid user inputs.
+- Duplicate student IDs, employee IDs, ISBNs, and phone numbers where applicable.
+- Missing records during search, update, or deletion.
+- Boundary values such as marks of 0 and 100.
+- Library issue and return restrictions.
+- Empty paragraphs and words that are not found.
+- Reports using the supplied sample data.
 
-Note: The program filenames and folder paths may vary depending on the repository structure.
+## 📚 Learning Outcomes
 
-🧪 Testing Checklist
- Verify valid and invalid student marks.
- Test duplicate student and employee IDs.
- Check missing-record handling during search and deletion.
- Verify student averages, toppers, and grade groups.
- Check department-wise payroll and salary calculations.
- Verify that the original employee dictionary remains unchanged after the raise operation.
- Test library issue and return restrictions.
- Test empty text and word-frequency calculations.
- Verify alphabetical tie-breaking in the top N words.
- Test phone-number length and duplicate-number validation.
- Verify all reports against the supplied sample data.
- Predict and verify the output of all Part B snippets.
-📚 Learning Outcomes
-After completing this lab, students should be able to:
+After completing these programs, students will be able to:
 
-Design applications using nested dictionaries.
-Implement menu-driven programs.
-Perform CRUD operations on dictionary records.
-Use comprehensions for filtering and transforming data.
-Aggregate and group records efficiently.
-Validate data and enforce application rules.
-Explain dictionary copying, hashing, and key behavior.
-Analyze the efficiency of dictionary lookups.
-Debug and verify Python program output.
-Author: Chetan Patil
-Course: Integrated MCA
-Lab Assignment: Python Dictionaries — Lab 5
+1. Design and manipulate nested dictionary structures.
+2. Implement menu-driven applications.
+3. Apply comprehensions to transform and filter data.
+4. Perform efficient searches and generate reports.
+5. Enforce business rules through input validation.
+6. Handle common edge cases without unexpected program termination.
+
+## 👨‍💻 Author
+
+**Ishaan Sharma**
+
+---
+
+*Python Dictionary — Part A: Programs | Practice Assignment*
