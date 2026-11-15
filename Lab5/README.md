@@ -133,7 +133,7 @@ After completing these programs, students will be able to:
 
 ## 👨‍💻 Author
 
-**Ishaan Sharma**
+**Chetan Patil**
 
 ---
 
